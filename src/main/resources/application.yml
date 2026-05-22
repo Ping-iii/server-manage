@@ -1,0 +1,25 @@
+server:
+  port: 9000
+
+server-manage:
+  runtime-dir: runtime
+
+spring:
+  application:
+    name: server-manage
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB
+  jpa:
+    database-platform: org.hibernate.dialect.DerbyDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:derby:server_manage_db;create=true
+    driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+    username: sa
+    password:
